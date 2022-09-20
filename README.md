@@ -12,6 +12,10 @@ Chuck Mayo - cmayo@med.umich.edu
 
 John Yao - yuayao@med.umich.edu
 
+# Disclaimer
+
+This code should only be used in research and development settings.
+
 # Project structure
 
 - AutoPlan_HN is the main project which produces AutoPlan_HN exe file.
