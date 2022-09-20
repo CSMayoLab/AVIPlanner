@@ -1,0 +1,80 @@
+[
+  { "StructureID": "zOptPTV_High_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 0,   "OPT_priority": "120", "Rx_scale": 1.02 },
+  { "StructureID": "zOptPTV_High_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 10,  "OPT_priority": "100", "Rx_scale": 1.02 },
+  { "StructureID": "zOptPTV_High_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Lower", "metric_parameter": 90,  "OPT_priority": "100", "Rx_scale": 1.02 }, 
+  { "StructureID": "zOptPTV_High_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Lower", "metric_parameter": 100, "OPT_priority": "150", "Rx_scale": 1.01 },
+
+  { "StructureID": "zOptPTV_High_L", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 0,   "OPT_priority": "100", "Rx_scale": 1.02 }, 
+  { "StructureID": "zOptPTV_High_L", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Lower", "metric_parameter": 100, "OPT_priority": "100", "Rx_scale": 1.01 },
+
+
+  { "StructureID": "zOptPTV_Mid_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 0,   "OPT_priority": "90", "Rx_scale": 1.02 },
+  { "StructureID": "zOptPTV_Mid_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 10,  "OPT_priority": "90", "Rx_scale": 1.02 },
+  { "StructureID": "zOptPTV_Mid_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Lower", "metric_parameter": 90,  "OPT_priority": "100", "Rx_scale": 1.02 }, 
+  { "StructureID": "zOptPTV_Mid_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Lower", "metric_parameter": 100, "OPT_priority": "105", "Rx_scale": 1.01 }, 
+
+  { "StructureID": "zOptPTV_Mid_L", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 0,   "OPT_priority": "80", "Rx_scale": 1.02 },
+  { "StructureID": "zOptPTV_Mid_L", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Lower", "metric_parameter": 100, "OPT_priority": "90", "Rx_scale": 1.01 },
+
+
+  { "StructureID": "zOptPTV_Low_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 0,   "OPT_priority": "100", "Rx_scale": 1.03 },
+  { "StructureID": "zOptPTV_Low_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 10,  "OPT_priority": "100", "Rx_scale": 1.03 }, 
+  { "StructureID": "zOptPTV_Low_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Lower", "metric_parameter": 90,  "OPT_priority": "100", "Rx_scale": 1.03 }, 
+  { "StructureID": "zOptPTV_Low_H", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Lower", "metric_parameter": 100, "OPT_priority": "108", "Rx_scale": 1.02 },
+
+  { "StructureID": "zOptPTV_Low_L", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 0,   "OPT_priority": "100", "Rx_scale": 1.03 }, 
+  { "StructureID": "zOptPTV_Low_L", "tag": "zPTV", "metric_type": "DxPercent_Gy", "ooo": "Lower", "metric_parameter": 100, "OPT_priority": "90", "Rx_scale": 1.02 }, 
+
+
+  { "StructureID": "Brainstem", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 },
+  { "StructureID": "OpticChiasm", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 },
+  { "StructureID": "OpticNrv_L", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 },
+  { "StructureID": "OpticNrv_R", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 }, 
+  { "StructureID": "SpinalCord", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 }, 
+  { "StructureID": "Brainstem_PRV03", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 }, 
+  { "StructureID": "OpticChiasm_PRV3", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 },
+  { "StructureID": "OpticNrv_PRV03_L", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 }, 
+  { "StructureID": "OpticNrv_PRV03_R", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 }, 
+  { "StructureID": "SpinalCord_PRV05", "tag": "fixed_limit_point", "metric_type": "DxPercent_Gy", "metric_parameter": 0, "limit": 48 }, 
+
+
+  { "StructureID": "Brainstem", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 },
+  { "StructureID": "OpticChiasm", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 },
+  { "StructureID": "OpticNrv_L", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 }, 
+  { "StructureID": "OpticNrv_R", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 },
+  { "StructureID": "SpinalCord", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 },
+  { "StructureID": "Brainstem_PRV03", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 },
+  { "StructureID": "OpticChiasm_PRV3", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 }, 
+  { "StructureID": "OpticNrv_PRV03_L", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 },
+  { "StructureID": "OpticNrv_PRV03_R", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 }, 
+  { "StructureID": "SpinalCord_PRV05", "tag": "adjust_priority", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "prio_offset": 1 }, 
+
+  { "StructureID": "Larynx", "tag": "fixed_mean", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 15 }, 
+  { "StructureID": "Esophagus", "tag": "fixed_mean", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 18 },
+  { "StructureID": "Parotid_L", "tag": "fixed_mean", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 20 },
+  { "StructureID": "Parotid_R", "tag": "fixed_mean", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 20 }, 
+  { "StructureID": "Glnd_Submand_L", "tag": "fixed_mean", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 23 }, 
+  { "StructureID": "Glnd_Submand_R", "tag": "fixed_mean", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 23 },
+  { "StructureID": "Musc_Constrict_S", "tag": "fixed_mean", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 48 },
+  { "StructureID": "Musc_Constrict_I", "tag": "fixed_mean", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 15 }, 
+  { "StructureID": "Cavity_Oral", "tag": "fixed_mean", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 23 },
+
+
+  { "StructureID": "Eye_L", "tag": "overwrite_limit", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "limit": 40 }, 
+  { "StructureID": "Eye_R", "tag": "overwrite_limit", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "limit": 40 }, 
+  { "StructureID": "OpticNrv_L", "tag": "overwrite_limit", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "limit": 40 }, 
+  { "StructureID": "OpticNrv_R", "tag": "overwrite_limit", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "limit": 40 }, 
+  { "StructureID": "OpticChiasm", "tag": "overwrite_limit", "metric_type": "Dxcc_Gy", "metric_parameter": 0.1, "limit": 40 },
+
+
+  { "StructureID": "Glnd_Lacrimal_L", "tag": "overwrite_limit", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 40 }, 
+  { "StructureID": "Glnd_Lacrimal_R", "tag": "overwrite_limit", "metric_type": "Mean_Gy", "metric_parameter": -1, "limit": 40 },
+
+  
+  {"StructureID": "zBuff", "tag": "extra_generic_constraint", "metric_type": "DxPercent_Gy", "ooo": "Upper", "metric_parameter": 10, "limit": 30, "OPT_priority": "97"},  
+ 
+  {"StructureID": "zExample", "tag": "extra_generic_constraint", "metric_type": "Mean_Gy", "limit": 47, "OPT_priority": "99"},  
+  {"StructureID": "zExample", "tag": "extra_generic_constraint", "metric_type": "gEUD", "ooo": "Upper", "gEUD_a": 1.1, "limit": 46, "OPT_priority": "98"},  
+
+]
+

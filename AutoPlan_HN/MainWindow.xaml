@@ -1,0 +1,438 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:AutoPlan_GUI"
+        xmlns:views="clr-namespace:AutoPlan_GUI.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AutoPlan_GUI.MainWindow"
+        Loaded="MainWindow_OnLoaded"
+    Closed="MainWindow_OnClosed"
+        Title="AutoPlan" Height="650" Width="650" MaxHeight="1100" SizeToContent="Height">
+
+    <Window.Resources>
+
+        <views:Converter_StructureID_To_Bool x:Key="Converter_StructureID_To_Bool" />
+        <views:con_ToString3_justTypeConverter x:Key="con_ToString3_justTypeConverter" />
+        <views:Debug_Converter x:Key="Debug_Converter" />
+
+    </Window.Resources>
+
+    <Grid Margin="8" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="279*"/>
+            <ColumnDefinition Width="349*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1" BorderThickness="0 0 0 3" BorderBrush="Wheat" Grid.ColumnSpan="2" Margin="0,0,0.334,0"></Border>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Margin="0,0,0.334,0">
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,5" >
+                <TextBlock FontSize="16"
+                    Text="StructureSet:"
+                    VerticalAlignment="Center"
+                    />
+                <ComboBox
+                    x:Name="StructureSets_combobox"
+                    ItemsSource="{Binding StructureSets_in_patient}"
+                    SelectedItem="{Binding Combobox_SelectedStrS}"
+                    SelectionChanged="StructureSets_SelectionChanged"
+                    Width="180"
+                    Margin="4,0,0,0"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    >
+                </ComboBox>
+                <TextBlock x:Name="hint_select_strS" Text="{Binding hint_select_strS}" VerticalAlignment="Center" Foreground="Orange" FontSize="16"></TextBlock>
+                <StackPanel Orientation="Horizontal" Visibility="Hidden" Height="23" x:Name="New_strS_inputs">
+                    <TextBlock FontSize="16" Text=" to new Set Name: " VerticalAlignment="Center"/>
+                    <TextBox x:Name="New_StructureSet_Name" Width="135px" Text="{Binding NewStructureSet}" VerticalContentAlignment="Center" />
+                </StackPanel>
+
+            </StackPanel>
+            <TextBlock Text="{Binding error_msg_strS}" Foreground="Red"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Margin="0,4.667,0.334,0" Grid.Row="3" Grid.ColumnSpan="2">
+            <Border BorderThickness="0 0 0 3" BorderBrush="Wheat"/>
+            <Grid Margin="0 10 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="313*"/>
+                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="253*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal" Grid.ColumnSpan="2" Width="322">
+                    <TextBlock Margin="0 0 5 0"  FontSize="18"><Run Text="Rx Dose"/></TextBlock>
+                    <TextBox x:Name="RxDose"  Width="45px"  FontSize="18" Text="{Binding hd, UpdateSourceTrigger=Default}"/>
+                    <TextBlock Margin="5 0 35 0"  FontSize="18"><Run Text="Gy"/></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"           Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <TextBlock Margin="0 0 5 0"  FontSize="18"><Run Text="Nfraction"/></TextBlock>
+                    <TextBox x:Name="Nfraction" Width="40px"  FontSize="18" Text="{Binding Nf}"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0,0,0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="PTV_High"  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    <ComboBox x:Name="PTV_High" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedItem="{Binding ptv_h}"/>
+
+                    <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBox x:Name="hd_text" VerticalAlignment="Center" Width="35px" Text="{Binding hd, UpdateSourceTrigger=Default}"/>
+                        <TextBlock Margin="5 0 0 0"><Run Text="Gy"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="PTV_Mid" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="40,0,39,0"/>
+                    <ComboBox x:Name="PTV_Mid" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedItem="{Binding ptv_m}" Margin="0,1"/>
+
+                    <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBox  x:Name="md_text" VerticalAlignment="Center" Width="35px" Text="{Binding md}"/>
+                        <TextBlock Margin="5 0 0 0"><Run Text="Gy"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="PTV_Low"  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    <ComboBox x:Name="PTV_Low" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"  SelectedItem="{Binding ptv_l}"/>
+
+                    <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBox  x:Name="ld_text" VerticalAlignment="Center" Width="35px" Text="{Binding ld}"/>
+                        <TextBlock Margin="5 0 0 0"><Run Text="Gy"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+
+
+            </Grid>
+            <Border BorderThickness="0 0 0 3" BorderBrush="Wheat"/>
+
+        </StackPanel>
+
+        <!-- Patient ID -->
+        <Border BorderThickness="0 0 0 3" BorderBrush="Wheat" Grid.ColumnSpan="2" Margin="0,0,0.334,0"></Border>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,8,0.334,5" Grid.ColumnSpan="2" >
+            <TextBlock FontSize="16" Text="Patient:" VerticalAlignment="Center"/>
+            <ComboBox
+                x:Name="PatientIdTextBox"
+                ItemsSource="{Binding PatientMatches}"
+                Text="{Binding PatientId}"
+                IsEditable="True"
+                Width="218"
+                Margin="4,0,0,0"
+                PreviewTextInput="PatientIdTextBox_OnPreviewTextInput"
+                DropDownClosed="PatientIdTextBox_OnDropDownClosed"
+                SelectionChanged="PatientIdTextBox_SelectionChanged"   
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock><Run Text="{Binding Id, Mode=OneWay}"/><Run Text=" ("/><Run Text="{Binding LastName, Mode=OneWay}"/><Run Text=", "/><Run Text="{Binding FirstName, Mode=OneWay}"/><Run Text=")"/></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <!--<Button
+                Content="Open"
+                IsDefault="True"
+                Command="{Binding OpenPatientCommand}"
+                Width="73" Height="21"
+                Margin="8,0,0,0"
+                />-->
+            <TextBlock VerticalAlignment="Center" Margin="5 0 0 0" Text="{Binding error_msg_pat}" Foreground="Red"></TextBlock>
+
+            <TextBlock x:Name="Label_MachineID" FontSize="16" Text="MachineID:" VerticalAlignment="Center" Margin="5 0 0 0"/>
+
+            <ComboBox
+                x:Name="Combo_MachineID"
+                Width="75"
+                Margin="3 0 0 0"
+                VerticalAlignment="Center"
+                SelectedItem="{Binding MachineID}"
+                SelectionChanged="Combo_MachineID_SelectionChanged"
+                >
+                <!--<ComboBoxItem>BR1</ComboBoxItem>
+                <ComboBoxItem>UM-EX4</ComboBoxItem>-->
+            </ComboBox>
+
+        </StackPanel>
+
+        <!-- Lists of ESAPI objects -->
+        <Grid Grid.Row="2" Margin="0,8,0.334,0.333" Grid.ColumnSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Name="warning_for_overwrite" Grid.Row="1" Grid.ColumnSpan="2" Margin="0 7 0 5" Foreground="Orange" FontSize="16" Visibility="Hidden">
+                <Run Text="AutoPlan will be created in "/><Run Text=" Plan: "/><Run Text="{Binding combobox_PlanSelected}"/><Run Text=" Course: "/><Run Text="{Binding SelectedCourse}"/>
+            </TextBlock>
+
+            <StackPanel  Grid.Row="2" Grid.ColumnSpan="2" >
+                <TextBlock Text="{Binding error_msg_cs_pl}" Foreground="Red" TextWrapping="Wrap"></TextBlock>
+
+                <DockPanel Grid.Row="5" Margin="0 0 0 0">
+                    <!--<CheckBox Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10 0 0"
+                        Content="Use intermediate dose in optimization"
+                        IsChecked="{Binding if_use_intermediate_dose}"
+                        VerticalAlignment="Center"
+                        />-->
+                    <CheckBox x:Name="if_use_existing_beams" DockPanel.Dock="Left" Visibility="Hidden"
+                        Content="Keep existing beams and beam settings in selected plan"
+                        IsChecked="{Binding if_use_existing_beams}"
+                        Checked="if_use_existing_beams_Checked"
+                        Unchecked="if_use_existing_beams_Unchecked"
+                        VerticalAlignment="Center"
+                              ToolTip="Existing beams and their settings will be used. While existing optimization structures and constraints will not."
+                        />
+                    <CheckBox x:Name="if_stop_before_opt"
+                        Content="Stop before OPT"
+                        Margin="10 0 10 0"
+                        IsChecked="{Binding if_stop_before_OPT}"
+                        VerticalAlignment="Center"
+                              ToolTip="AutoPlan will set up beams and optimization structures, but won't perform optimization and dose calculation"
+                        />
+                    <CheckBox x:Name="if_jaw_tracking"
+                        Content="Jaw Tracking"
+                        Margin="10 0 10 0"
+                        IsChecked="{Binding if_jaw_tracking}"
+                        VerticalAlignment="Center"
+                        />
+                    <CheckBox x:Name="if_4_beams" DockPanel.Dock="Right"
+                              HorizontalAlignment="Right"
+                        Content="4 beams"
+                        IsChecked="{Binding if_4_beams}"
+                        VerticalAlignment="Center"
+                              ToolTip="Use 4 VMAT beams instead of the default 3"
+                        />
+                </DockPanel>
+            </StackPanel>
+
+            <Grid Margin="0 5 0 0" Grid.ColumnSpan="2" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Name="new_course_input" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal" Visibility="Hidden">
+                    <TextBlock Margin="0 0 5 0" FontSize="16" ><Run Text="new course ID:"/></TextBlock>
+                    <TextBox x:Name="New_Course_Name" Width="135px" Text="{Binding SelectedCourse}" VerticalContentAlignment="Center" GotFocus="New_Course_Name_GotFocus" TextChanged="New_Course_Name_TextChanged" />
+                </StackPanel>
+
+                <StackPanel Name="new_plan_input" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal" Visibility="Hidden">
+                    <TextBlock Margin="0 0 5 0" FontSize="16"><Run Text="new plan ID:"/></TextBlock>
+                    <TextBox x:Name="New_Plan_Name" Width="135px" Text="{Binding SelectedPlan}" VerticalContentAlignment="Center" GotFocus="New_Plan_Name_GotFocus" TextChanged="New_Plan_Name_TextChanged" />
+                </StackPanel>
+            </Grid>
+
+
+            <!-- All PlanSetups and PlanSums -->
+            <DockPanel
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="0,0,4,0"
+                >
+                <TextBlock
+                    DockPanel.Dock="Top"
+                    Text="Select a Course:"
+                    />
+                <ComboBox x:Name="CourseList"
+                    DockPanel.Dock="Top"
+                    Margin="0,4,0,0"
+                         SelectionChanged="CourseList_SelectionChanged" 
+                         SelectedItem="{Binding combobox_CourseSelected}"
+                    >
+                </ComboBox>
+            </DockPanel>
+
+            <!-- Active PlanSetup -->
+            <DockPanel 
+                Grid.Row="0"
+                Grid.Column="1" 
+                Margin="4,0,0,0"
+                
+                >
+                <TextBlock
+                    DockPanel.Dock="Top"
+                    Text="Select a Plan:"
+                    />
+                <ComboBox x:Name="PlanList"
+                    DockPanel.Dock="Top"
+                    Margin="0,4,0,0"
+                         SelectionChanged="PlanList_SelectionChanged"
+                         SelectedItem="{Binding combobox_PlanSelected}"
+                    >
+                </ComboBox>
+            </DockPanel>
+        </Grid>
+
+
+
+        <Expander Grid.Row="4" Header="Modify the Default OAR Planning Directive (optional)" Margin="0,5,0.334,6"
+                  IsExpanded="True" Grid.ColumnSpan="2">
+            <ScrollViewer>
+                <StackPanel Grid.Row="3" Orientation="Vertical">
+                    <Grid Width="600" ShowGridLines="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="135" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Structure" 
+                            TextWrapping="Wrap" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="Volume[cc]" 
+                                TextWrapping="Wrap" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Text="PTV Overlap [cc]" 
+                               Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" 
+                               ToolTip="H_/M_/L_ denotes overlap volume with PTV_High/Mid/Low"/>
+                        <TextBlock Grid.Column="3" HorizontalAlignment="Center" Text="Constraint" 
+                                TextWrapping="Wrap" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="4" HorizontalAlignment="Center" Text="Limit[Gy]" 
+                               Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="5" HorizontalAlignment="Center" Text="Priority" 
+                               Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <Border Grid.Row="3" BorderThickness="0 2 0 0" BorderBrush="Wheat"></Border>
+
+
+                    <ListBox x:Name="cons_list"  
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderThickness="0"
+                         VirtualizingPanel.IsVirtualizing="False"
+                         >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Wheat" BorderThickness="0,0,0,1">
+                                    <Grid Width="600" ShowGridLines="False">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="120" />
+                                            <ColumnDefinition Width="80" />
+                                            <ColumnDefinition Width="135" />
+                                            <ColumnDefinition Width="100" />
+                                            <ColumnDefinition Width="80" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <!--<Border BorderThickness="1" BorderBrush="Wheat" Grid.Column="0" Grid.ColumnSpan="4"></Border>-->
+                                        <TextBlock Text="{Binding StructureID}" TextWrapping="Wrap" VerticalAlignment="Center" Tag="{Binding tag}"/>
+
+                                        <TextBlock Grid.Column="1" Text="{Binding volume, StringFormat=N1}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        
+                                        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Text="{Binding opol_string}" 
+                                                   TextWrapping="Wrap"  VerticalAlignment="Center"
+                                                   ToolTip="H_/M_/L_ denotes overlap volume with PTV_High/Mid/Low"/>
+                                        
+                                        <TextBlock Grid.Column="3" HorizontalAlignment="Center" Text="{Binding Converter={StaticResource con_ToString3_justTypeConverter}}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+
+                                        <TextBlock Grid.Column="4" HorizontalAlignment="Center" Text="{Binding limit}" 
+                               Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="60"/>
+
+                                        <!--<ComboBox Grid.Column="4" HorizontalAlignment="Center" Margin="0,0,0,0"  VerticalAlignment="Center"
+                                                  SelectedIndex="{Binding Path=priority, Converter= {StaticResource combobox_selectedindex_Converter}}">
+                                            <ComboBoxItem>1</ComboBoxItem>
+                                            <ComboBoxItem>3</ComboBoxItem>
+                                        </ComboBox>-->
+
+                                        <ComboBox Grid.Column="5" HorizontalAlignment="Center" Margin="0,0,0,0"  VerticalAlignment="Center" Width="45" 
+                                                  SelectedValue="{Binding Path=priority_decimal}"
+                                                  IsEnabled="{Binding StructureID, Converter={StaticResource Converter_StructureID_To_Bool}}"
+                                                  ItemsSource="{Binding Path=DataContext.priorities, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}"
+                                                  SelectionChanged="cons_list_priority_SelectionChanged"
+                                                  >
+                                            <!--<ComboBox.Style>
+                                                <Style TargetType="{x:Type ComboBox}">
+                                                    <Setter Property="IsEnabled" Value="True" />
+                                                    <Style.Triggers>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{Binding Path=StructureID, Converter={StaticResource Debug_Converter}}" Value="Brainstem" />
+                                                                <Condition Binding="{Binding DataContext.StructureID, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ComboBox}}}" Value="Parotid_L" />
+                                                                <Condition Binding="{Binding StructureID}" Value="Parotid_R" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <Setter Property="IsEnabled" Value="False" />
+                                                        </MultiDataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ComboBox.Style>-->
+                                        </ComboBox>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock Text="*If a constraint didn't show up as expected, please check the Planding Directive and if the structure name is following TG263 standard." TextWrapping="Wrap"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Expander>
+        <TextBlock Grid.Row="5" Text="{Binding error_msg}" Foreground="Red" Margin="0,8,-0.666,0" Grid.ColumnSpan="2"></TextBlock>
+
+        <!-- Run and Exit buttons -->
+        <Border Grid.Row="5" Grid.RowSpan="2" BorderThickness="0 3 0 3" BorderBrush="Wheat" Grid.ColumnSpan="2" Margin="0,0,0.334,-0.333"/>
+        <StackPanel
+            Grid.Row="6"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right"
+            Margin="0,0,0.334,-0.333" Grid.Column="1"
+            >
+            <!--<CheckBox
+                Content="Exit after plug-in script ends"
+                IsChecked="{Binding ShouldExit}"
+                VerticalAlignment="Center"
+                />-->
+            <Button x:Name="OK_Button_Name"
+                Content="Setup Course and Plan and Start AutoPlan"
+                Click="OK_Button_Name_Click"
+                Command="{Binding RunScriptCommand}"
+                Width="auto" Height="21"
+                Margin="8,0,0,0"
+                    ToolTip="Start automatic planning process. No change to the patient is made before clicking this button."
+                />
+            <Button
+                Content="Cancel"
+                Command="{Binding ExitCommand}"
+                Width="73" Height="21"
+                Margin="8,0,0,0"
+                />
+        </StackPanel>
+    </Grid>
+
+
+</Window>
