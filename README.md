@@ -4,6 +4,8 @@ Eclipse Scripting API based Automatic planner for Head and Neck VMAT.
 
 Create RT plan based on historical manual planning experiences (summarized into pre-calculated Json files).
 
+In viewing and using AVIPlanner the terms and conditions in the LICENSE.txt, COPYRIGHT.txt and NOTICE.txt files apply
+
 # Author
 
 University of Michigan - Department of Radiation Oncology
