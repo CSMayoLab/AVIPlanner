@@ -59,4 +59,4 @@ This code should only be used in research and development settings.
 
 
 # Images
-![Publication and Isodoses](https://github.com/CSMayoLab/AVIPlanner/edit/main/AVIPlanner_Publication_Isodose.png)
+![Publication and Isodoses](./AVIPlanner_Publication_Isodose.png)
