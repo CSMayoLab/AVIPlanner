@@ -60,3 +60,5 @@ This code should only be used in research and development settings.
 
 # Images
 ![Publication and Isodoses](./AVIPlanner_Publication_Isodose.png)
+![Interface and Function](./AVIPlanner_Interface_Function.png)
+![DVH Curve Comparison](./AVIPlanner_DVHCurveComparison.png)
