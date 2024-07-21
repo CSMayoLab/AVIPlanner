@@ -1,6 +1,6 @@
 # AVIPlanner
 
-Eclipse Scripting API based Automatic planner for Head and Neck VMAT.
+Eclipse Scripting API based Automatic planner for Head and Neck VMAT. The software is solely for non-commercial, non-clinical research and education use in support of the publication.
 
 Create RT plan based on historical manual planning experiences (summarized into pre-calculated Json files).
 
