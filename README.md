@@ -57,6 +57,11 @@ This code should only be used in research and development settings.
 
    This file configs constraints that are applied to PTV and OARs.
 
+# Citation
+If you use AVIPlanner please site our work. 
+
+Jaworski EM, Mierzwa ML, Vineberg KA, Yao J, Shah JL, Schonewolf CA, Litzenberg D, Gharzai LA, Matuszak MM, Paradis KC, Dougherty A, Burger P, Tatro D, Arnould GS, Moran JM, Lee C, Eisbruch A, Mayo CS. Development and Clinical Implementation of an Automated Virtual Integrative Planner for Radiation Therapy of Head and Neck Cancer. Adv Radiat Oncol. 2022 Jul 17;8(2):101029. doi: 10.1016/j.adro.2022.101029. PMID: 36578278; PMCID: PMC9791598.
+
 
 # Images
 ![Publication and Isodoses](./AVIPlanner_Publication_Isodose.png)
